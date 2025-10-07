@@ -15,38 +15,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build static site
+  deploy:
+    name: Upload and Deploy 'site' folder
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # If you have a Node build step (e.g., Vite/React/etc.), keep these:
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.12.1
-          cache: npm
-      - name: Install deps
-        run: npm ci
-      - name: Build
-        run: npm run build
-
-      # ⬇️ Change 'dist' to your output folder (e.g., 'build' or 'site')
+      # No build step — we publish the site/ folder as-is
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
-  deploy:
-    name: Deploy to Pages
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
