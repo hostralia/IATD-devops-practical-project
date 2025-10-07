@@ -1,6 +1,6 @@
 {
   "name": "pracproject",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "The project to be worked on throughout practicals in Intro to DevOps",
   "main": "index.js",
   "type": "module",
