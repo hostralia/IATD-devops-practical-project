@@ -61,7 +61,7 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:user-latest
-      - name: Pull & run test image
+      - name: Pull & run user image
        # test if created by pull user image 
         run: |
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:user-latest
