@@ -4,10 +4,10 @@ on:
     branches: [ main ]            
     paths:
       - '.github/workflows/docker-image-both-test-user-workflow.yml'
-      - 'Dockerfiles/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'src/**'
+#      - 'Dockerfiles/**'
+#      - 'package.json'
+#      - 'package-lock.json'
+#      - 'src/**'
       
 jobs:
   test-and-deploy:
@@ -50,7 +50,7 @@ jobs:
       - name: Pull & run test image
         run: |
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
-        #  docker run --rm -it ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
+          docker run --rm -it ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
 
       # --- USER IMAGE (runs npm start; excludes tests) ---
       - name: Build & push user image
