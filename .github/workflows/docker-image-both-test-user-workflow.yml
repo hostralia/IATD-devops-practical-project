@@ -1,9 +1,7 @@
 name: workflow-dockers test + user images
 on:
  push:
-    branches: [ main ]            
-   
-    paths-ignore:
+   paths-ignore:
       - ".github/workflows/docker-image-workflow.yml"
       - ".github/workflows/delpy.yml"
       - ".github/workflows/firstci.yml" 
