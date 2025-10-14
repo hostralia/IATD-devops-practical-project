@@ -56,7 +56,7 @@ jobs:
         run: |
           docker run --rm --entrypoint sh \
           ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest \
-          -lc 'pwd; ls -la; echo "--- /src ---"; ls -la /src || true; '
+          -lc 'pwd; ls -la; '
 
       # --- USER IMAGE (runs npm start; excludes tests) ---
       - name: Build & push user image
