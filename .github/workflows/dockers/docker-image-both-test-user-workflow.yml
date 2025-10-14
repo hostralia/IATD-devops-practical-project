@@ -4,14 +4,7 @@ on:
     branches: [ "main" ]
     paths:
       - ".github/workflows/dockers/**"
-# paths:
-#      - '.github/workflows/docker-image-both-test-user-workflow.yml'
-#    paths:
-#      - 'Dockerfiles/**'
-#      - 'package.json'
-#      - 'package-lock.json'
-#      - 'src/**'
-      
+
 jobs:
   test-and-user-deploy:
     runs-on: ubuntu-latest
