@@ -1,8 +1,8 @@
 name: Docker image user-facing build and push
 on:
-  workflows: ["docker-image-test-workflow"]  # must match the other workflow's `name:`
-  types: [completed]
-  branches: [main]                            
+  push:        # triggers the workflow every time you push code
+    branches:
+      - main   # or 'master' — use your default branch name                     
     
     
 jobs:
