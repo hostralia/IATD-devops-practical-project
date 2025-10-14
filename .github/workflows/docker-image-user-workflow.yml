@@ -1,7 +1,8 @@
-name: workflow-dockers test + user images
+name: Docker image user-facing build and push
 on:
-  push:
-    branches: [ "main" ]
+  workflows: ["docker-image-test-workflow"]  # must match the other workflow's `name:`
+  types: [completed]
+  branches: [main]                            
     
     
 jobs:
