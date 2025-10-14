@@ -56,7 +56,7 @@ jobs:
         run: |
           docker run --rm --entrypoint sh \
           ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest \
-          -lc 'pwd; ls -la; echo "--- /src ---"; ls -la /src || true; echo "--- /src (recursive) ---"; ls -R /src || true'
+          -lc 'pwd; ls -la; echo "--- /src ---"; ls -la /src || true; '
 
       # --- USER IMAGE (runs npm start; excludes tests) ---
       - name: Build & push user image
@@ -74,5 +74,5 @@ jobs:
       - name: List files inside image (/app)
         run: |
           docker run --rm --entrypoint sh \
-          ${{ secrets.DOCKERHUB_USERNAME }}/moussa-jawdat-intro-to-devops-a2:test-latest \
+          ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:user-latest \
           -lc 'pwd; ls -la; echo "--- /app ---"; ls -la /app || true; echo "--- /app (recursive) ---"; ls -R /app || true'
