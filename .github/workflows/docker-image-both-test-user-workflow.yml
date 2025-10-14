@@ -1,11 +1,9 @@
 name: workflow-dockers manual - CI + CD (test + user images)
 on:
-on:
-  workflow_dispatch: {}
-#  push:
-#    branches: [ feat/docker-images ]            
-#    paths:
-#      - '.github/workflows/docker-image-both-test-user-workflow.yml'
+ push:
+    branches: [ main ]            
+    paths:
+      - '.github/workflows/docker-image-both-test-user-workflow.yml'
 #      - 'Dockerfiles/**'
 #      - 'package.json'
 #      - 'package-lock.json'
