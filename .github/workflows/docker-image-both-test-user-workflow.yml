@@ -75,4 +75,4 @@ jobs:
         run: |
           docker run --rm --entrypoint sh \
           ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:user-latest \
-          -lc 'pwd; ls -la; echo "--- /app ---"; ls -la /app || true; echo "--- /app (recursive) ---"; ls -R /app || true'
+          -lc 'pwd; ls -la; echo "--- /app ---"; ls -la /app || true; '
