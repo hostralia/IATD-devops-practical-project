@@ -1,9 +1,16 @@
-name: workflow-dockers manual - CI + CD (test + user images)
+name: workflow-dockers test + user images
 on:
  push:
     branches: [ main ]            
     paths:
       - '.github/workflows/docker-image-both-test-user-workflow.yml'
+    paths-ignore:
+      - ".github/workflows/docker-image-workflow.yml"
+      - ".github/workflows/delpy.yml"
+      - ".github/workflows/firstci.yml" 
+      - ".github/workflows/static.yml" 
+
+#    paths:
 #      - 'Dockerfiles/**'
 #      - 'package.json'
 #      - 'package-lock.json'
@@ -75,4 +82,4 @@ jobs:
         run: |
           docker run --rm --entrypoint sh \
           ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:user-latest \
-          -lc 'pwd; ls -la; echo "--- /app ---"; ls -la /app || true; '
+          -lc 'pwd; ls -la; '
