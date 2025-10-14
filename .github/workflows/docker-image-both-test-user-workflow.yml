@@ -2,9 +2,7 @@ name: workflow-dockers test + user images
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - "docker/**"
-      - ".github/workflows/docker-image-both-test-user-workflow.yml"
+    
     
 jobs:
   test-and-user-deploy:
