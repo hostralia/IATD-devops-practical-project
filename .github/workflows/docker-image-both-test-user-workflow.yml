@@ -2,9 +2,7 @@ name: workflow-dockers test + user images
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - ".github/workflows/dockers/**"
-
+    
 jobs:
   test-and-user-deploy:
     runs-on: ubuntu-latest
