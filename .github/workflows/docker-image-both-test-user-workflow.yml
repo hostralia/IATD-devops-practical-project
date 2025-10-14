@@ -1,7 +1,7 @@
 name: workflow-dockers - CI + CD (test + user images)
 on:
   push:
-    branches: [ main ]            
+    branches: [ feat/docker-images ]            
     paths:
       - '.github/workflows/docker-image-both-test-user-workflow.yml'
 #      - 'Dockerfiles/**'
