@@ -44,13 +44,13 @@ jobs:
       #    file: Dockerfiles/test.Dockerfile
       #    push: true
       #    tags: |
-      #      ${{ secrets.DOCKERHUB_USERNAME }}/moussa-jawdat-intro-to-devops-a2:test-latest
+      #      ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:test-latest
 
       # Prove the pushed test image runs successfully
       - name: Pull & run test image
         run: |
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
-          docker run --rm ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
+        #  docker run --rm -it ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
 
       # --- USER IMAGE (runs npm start; excludes tests) ---
       - name: Build & push user image
@@ -61,4 +61,6 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:user-latest
-           
+      - name: Pull & run test image
+        run: |
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:user-latest
