@@ -52,7 +52,7 @@ jobs:
         run: |
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
       #    docker run --rm -it ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest
-      - name: List files inside image (/app)
+      - name: List files inside image (test)
         run: |
           docker run --rm --entrypoint sh \
           ${{ secrets.DOCKERHUB_USERNAME }}/iat-inventory:latest \
