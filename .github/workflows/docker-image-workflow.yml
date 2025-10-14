@@ -4,7 +4,8 @@ on:
   push:        # triggers the workflow every time you push code
     branches:
       - main   # or 'master' — use your default branch name
-
+    paths:
+      - ".github/workflows/docker-image-workflow.yml"
 jobs:
   build-and-deploy:
     name: Build and Deploy Docker Image
