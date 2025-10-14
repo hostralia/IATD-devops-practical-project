@@ -3,11 +3,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "Dockerfiles/**"
-      - ".dockerignore"
-      - "package*.json"
-      - "src/**"
-      - ".github/workflows/docker-image-workflow.yml"
+      - ".github/workflows/dockers/**"
 # paths:
 #      - '.github/workflows/docker-image-both-test-user-workflow.yml'
 #    paths:
